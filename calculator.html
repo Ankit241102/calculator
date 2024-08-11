@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<link rel="stylesheet" href="./calculator.css">
+<body>
+    <div class="main">
+
+       
+     <div class="calculator">
+
+        <div class=" display"><input type="text" name="display" id = scr></div>
+
+        <div id="result1"></div>
+
+            <div class="div1">
+
+             <input type = "button" value = "AC" id = "row1" onclick = "clearall()">
+             <input type = "button" value = "back" id = "row1" onclick = "backspace()">
+             <input type = "button" value = "%" id = "row1" onclick = "append('%')" >
+             <input type = "button" value = "/" id = "row1" onclick = "append('/')">
+
+            </div>
+
+             <div class = "div1">
+
+                <input type="button" value = "7" id="row1" onclick = "append('7') ">
+                <input type="button" value = "8" id="row1" onclick = "append('8') ">
+                <input type="button" value = "9" id="row1"onclick = "append('9') ">
+                <input type="button" value = "*" id="row1"onclick = "append('*') ">
+            
+            </div>
+
+             <div class="div1">
+
+                <input type="button" value="4" id="row1" onclick = "append('4') ">
+                <input type="button" value="5" id="row1" onclick = "append('5') ">
+                <input type="button" value="6" id="row1" onclick = "append('6') ">
+                <input type="button" value ="-" id="row1" onclick = "append('-') ">
+
+             </div>
+
+             <div class="div1">
+               
+                <input type="button" value="1" id="row1" onclick = "append('1') ">
+                <input type="button" value="2" id="row1" onclick = "append('2') ">
+                <input type="button" value="3" id="row1" onclick = "append('3') ">
+                <input type="button" value ="+" id="row1" onclick = "append('+') ">
+            
+            </div>
+
+             <div class="div1">
+
+                <input type="button" value="00" id="row1" onclick = "append('00') ">
+                <input type="button" value="0" id="row1" onclick = "append('0') ">
+                <input type="button" value="." id="row1" onclick = "append('.') ">
+                <input type="button" value ="=" id="row1" onclick = "result() ">
+
+             </div>
+
+
+            
+        </div>
+  
+    </div>
+
+    <script>
+        const display = document.querySelector("#scr");
+
+        function clearall(){
+            
+            display.value = '';
+            document.querySelector("#result1").innerHTML = '';
+        }
+
+        function backspace(){
+            display.value = display.value.slice(0 , -1);
+        }
+
+        function append(value){
+
+            display.value +=  value;    
+        }
+
+        function result(){
+
+            let x = document.querySelector("#result1");
+            display.style.scale=  "0.9"; 
+            x.innerHTML = eval(display.value);
+           
+        }
+
+    </script>
+</body>
+</html>
